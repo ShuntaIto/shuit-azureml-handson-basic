@@ -1,0 +1,19 @@
+name: azureml_simple_handson_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - lightgbm=3.3.2
+  - pandas=1.4.2
+  - numpy=1.22.4
+  - scikit-learn=1.1.1
+  - mlflow=1.26.1
+  - notebook
+  - ipykernel
+  - pip
+  - pip:
+      - azure-ai-ml
+      - azure-identity==1.11.0
+      - azureml-mlflow
+      - matplotlib

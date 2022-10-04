@@ -1,0 +1,17 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../02_train_as_job
+command: >-
+  python train.py  --input_train_data ${{inputs.train_data}} --input_test_data ${{inputs.test_data}} --mode remote
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:20220504.v1
+  conda_file: ../environment.yml
+inputs:
+  train_data:
+    type: uri_file
+    path: azureml:nyc_taxi_train@latest
+  test_data:
+    type: uri_file
+    path: azureml:nyc_taxi_test@latest
+compute: azureml:cpucluster
+experiment_name: nyc_taxi_regression_job
+description: nyc taxi regression

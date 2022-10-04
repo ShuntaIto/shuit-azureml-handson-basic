@@ -1,0 +1,5 @@
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+type: uri_file
+name: nyc_taxi_train
+description: nyc taxi dataset for training
+path: ../data/nyc_taxi_train_dataset.csv
